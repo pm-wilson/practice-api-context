@@ -1,36 +1,20 @@
 import React from 'react';
 import { useSpells } from '../../hooks/spells';
-import SpellListItem from './spellListItem';
-import styles from '../styles.css';
+import { useColorPicker } from '../../hooks/colors';
 
 const SpellList = () => {
-  const spells = useSpells();
+  const { spellList } = useSpells();
+  const { lightMode } = useColorPicker();
+  const modeClass = lightMode ? '_1yf-o0z033RbAHQOAY1KRe' : '_2hAGQDxUbRuNG6XUTI7sOp';
 
-  console.log(spells, 'spells');
+  if(spellList.length === 0) return <h1>No Data</h1>;
+  const spellListToShow = spellList.results;
 
-
-
-  const spellItems = spells.length ?  spells.map(spell => {
-    <div key={spell.index}>
-      <SpellListItem {...spell}/>
-    </div>;
-  }) : 'Loading';
-  const dropdowns = Array(10);
+  const spellItems = spellListToShow.map(spell => (<div key={spell.index}>{spell.name}</div>));
 
   return (
-    <div>
+    <div className={modeClass}>
       <h2>Spell List</h2>
-      <h3>Level
-        <form>
-          <select 
-            name="spell-level"
-          >
-            {dropdowns.map((n, i) => {
-              <option value={i - 1}>{i - 1}</option>;
-            })}
-          </select>
-        </form>
-      </h3>
       <div>
         {spellItems}
       </div>

@@ -1,3 +1,12 @@
 body {
-  background: gray;
+background-color: brown;
+}
+
+.lightMode {
+  background-color: lightgreen;
+  color: black;
+}
+.darkMode {
+  background-color: black;
+  color: lightblue;
 }

@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-import styles from '../styles.css';
+import React from 'react';
+import { useColorPicker } from '../../hooks/colors';
 
-const SpellDetailPage = () => {
-
+const Header = () => {
+  const { lightMode, toggle } = useColorPicker();
+  const modeClass = lightMode ? '_1yf-o0z033RbAHQOAY1KRe' : '_2hAGQDxUbRuNG6XUTI7sOp';
+  const buttonClass = lightMode ? '_2hAGQDxUbRuNG6XUTI7sOp' : '_1yf-o0z033RbAHQOAY1KRe';
 
   return (
-    <div>
+    <div className={modeClass}>
       <h1>Spell Book</h1>
-      <button>Light Mode</button>
-      <button>Spell List</button>
+      <button className={buttonClass} onClick={toggle}>{lightMode ? 'Light Mode' : 'Dark Mode'}</button>
     </div>
   );
 };
 
-export default SpellDetailPage;
+export default Header;

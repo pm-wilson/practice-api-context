@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from '../components/styles.css';
 
 export const ColorModeContext = React.createContext();
 
@@ -12,14 +13,9 @@ export const ColorModeProvider = ({ children }) => {
       return true;
     });
   };
-
-  const bucket = {
-    lightMode,
-    toggle,
-  };
   
   return (
-    <ColorModeContext.Provider value={bucket}>
+    <ColorModeContext.Provider value={{ lightMode, toggle }}>
       {children}
     </ColorModeContext.Provider>
   );
