@@ -1,5 +1,14 @@
 import React from 'react';
+import ListPage from '../spellList/spellList';
+import Header from '../header/header';
+import { ColorModeProvider } from '../../context/ColorModeContext';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+
+  return (
+    <ColorModeProvider>
+      <Header />
+      <ListPage />
+    </ColorModeProvider>
+  );
 }
