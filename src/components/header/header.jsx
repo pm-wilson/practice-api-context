@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div className={modeClass}>
       <h1>Spell Book</h1>
-      <button className={buttonClass} onClick={toggle}>{lightMode ? 'Light Mode' : 'Dark Mode'}</button>
+      <button className={buttonClass} onClick={toggle}>{lightMode || lightMode === undefined ? 'Light Mode' : 'Dark Mode'}</button>
     </div>
   );
 };
