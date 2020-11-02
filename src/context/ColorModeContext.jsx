@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styles from '../components/styles.css';
 
 export const ColorModeContext = React.createContext();
 
